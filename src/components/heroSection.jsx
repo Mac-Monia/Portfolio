@@ -18,7 +18,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen text-white py-[115px] px-4 sm:px-8 lg:px-16 ">
+    <div id="home" className="flex items-center justify-center min-h-screen text-white py-[115px] px-4 sm:px-8 lg:px-16 scroll-mt-20">
       <div className="grid md:grid-cols-2 gap-10 w-full max-w-6xl">
         {/* Left Side */}
         <div className="flex flex-col justify-center gap-5">
