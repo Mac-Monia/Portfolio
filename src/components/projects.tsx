@@ -28,7 +28,7 @@ const projects = [
   },
   {
     title: "CarHub",
-    image: "/images/projects/portfolio.png",
+    image: "/images/projects/carhub.png",
     liveLink: "https://car-hub-klon.vercel.app",
     githubLink: "https://github.com/yourusername/expense-tracker",
   },
