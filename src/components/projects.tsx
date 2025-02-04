@@ -4,37 +4,32 @@ import { FaGithub } from "react-icons/fa";
 const projects = [
   {
     title: "Portfolio",
-    description: "My portfolio showcasing my skills and projects.",
     image: "/images/projects/portfolio.png",
-    liveLink: "https://ganzamonia.vercel.app",
+    liveLink: "https://ganzamacmonia.vercel.app",
     githubLink: "https://github.com/yourusername/expense-tracker",
   },
   {
-    title: "Portfolio",
-    description: "My portfolio showcasing my skills and projects.",
-    image: "/images/projects/portfolio.png",
-    liveLink: "https://ganzamonia.vercel.app",
+    title: "Investa",
+    image: "/images/projects/investa.png",
+    liveLink: "https://investa-klon.vercel.app",
     githubLink: "https://github.com/yourusername/expense-tracker",
   },
   {
-    title: "Portfolio",
-    description: "My portfolio showcasing my skills and projects.",
-    image: "/images/projects/portfolio.png",
-    liveLink: "https://ganzamonia.vercel.app",
+    title: "OrebiShopping",
+    image: "/images/projects/orebi.png",
+    liveLink: "https://orebishopping-klon.vercel.app",
     githubLink: "https://github.com/yourusername/expense-tracker",
   },
   {
-    title: "Portfolio",
-    description: "My portfolio showcasing my skills and projects.",
-    image: "/images/projects/portfolio.png",
-    liveLink: "https://ganzamonia.vercel.app",
+    title: "Apple",
+    image: "/images/projects/apple.png",
+    liveLink: "https://apple-klon.vercel.app",
     githubLink: "https://github.com/yourusername/expense-tracker",
   },
   {
-    title: "Portfolio",
-    description: "My portfolio showcasing my skills and projects.",
+    title: "CarHub",
     image: "/images/projects/portfolio.png",
-    liveLink: "https://ganzamonia.vercel.app",
+    liveLink: "https://car-hub-klon.vercel.app",
     githubLink: "https://github.com/yourusername/expense-tracker",
   },
 ];
@@ -53,7 +48,6 @@ const ProjectSection = () => {
               <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-4">
                 <h3 className="text-gray-100 text-xl font-semibold">{project.title}</h3>
-                <p className="text-gray-500 mt-2">{project.description}</p>
                 <div className="mt-4 flex justify-between items-center">
                   {/* Live Preview Button */}
                   <a
