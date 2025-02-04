@@ -7,7 +7,7 @@ import Others from "./components/others";
 import ContactForm from "./components/contact";
 import Footer from "./components/footer";
 import ProjectSection from "./components/projects";
-// import Testimonials from "./components/testimonials";
+import Testimonials from "./components/testimonials";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -47,7 +47,7 @@ export default function App() {
       <MySkills />
       <Others />
       <ProjectSection />      
-      {/* <Testimonials /> */}
+      <Testimonials />
       <ContactForm />
       <Footer />
       <ScrollToTopButton />

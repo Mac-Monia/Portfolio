@@ -1,66 +1,96 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const testimonials = [
+  {
+    id: 1,
+    name: "SITAMUSAHAU Ruth",
+    role: "Software Engineer",
+    text: "This service exceeded my expectations. The quality and attention to detail were phenomenal!",
+    image: "/images/avatar.jpeg"
+  },
+  {
+    id: 2,
+    name: "Nice USANASE",
+    role: "Product Manager",
+    text: "A fantastic experience from start to finish. Highly recommend!",
+    image: "/images/avatar.jpeg"
+  },
+  {
+    id: 3,
+    name: "UWAYO Pascaline",
+    role: "Designer",
+    text: "She's extremely professional and delivers on time. Great job!",
+    image: "/images/avatar.jpeg"
+  }
+];
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Hannah Schmitt",
-      role: "Lead designer",
-      image: "https://via.placeholder.com/100", // Replace with actual image URL
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    },
-    {
-      id: 2,
-      name: "Hannah Schmitt",
-      role: "Lead designer",
-      image: "https://via.placeholder.com/100", // Replace with actual image URL
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    },
-    {
-      id: 3,
-      name: "Hannah Schmitt",
-      role: "Lead designer",
-      image: "https://via.placeholder.com/100", // Replace with actual image URL
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    },
-  ];
+  const [index, setIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextTestimonial, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="bg-black text-white py-16">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-8">Testimonials</h2>
-      </div>
-      <div className="relative flex justify-center items-center">
-        <button className="absolute left-0 text-cyan-300 text-2xl px-2">&#x276E;</button>
-        <div className="flex space-x-6 overflow-hidden">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-gray-800 p-6 rounded-2xl text-center w-80 shadow-lg"
-            >
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-20 h-20 mx-auto rounded-full border-4 border-gray-900 mb-4"
-              />
-              <h3 className="text-xl font-semibold">{testimonial.name}</h3>
-              <p className="text-sm text-gray-400 mb-4">{testimonial.role}</p>
-              <p className="text-sm">{testimonial.text}</p>
-            </div>
+    <div className="flex flex-col items-center justify-center p-6 relative">
+      {/* Title */}
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">Testimonials</h2>
+
+      {/* Navigation Buttons */}
+      <button
+        onClick={prevTestimonial}
+        className="absolute left-0 md:left-10 top-1/2 transform -translate-y-1/2 p-3 bg-gray-900 border border-gray-300 rounded-full transition"
+      >
+        <ChevronLeft size={30} className="text-gray-300" />
+      </button>
+
+      {/* Glassmorphic Testimonial Card */}
+      <div className="w-full max-w-lg bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-2xl p-6 text-center">
+        <div className="flex flex-col items-center">
+          <img
+            src={testimonials[index].image}
+            alt={testimonials[index].name}
+            className="w-16 h-16 rounded-full border-4 border-gray-900 shadow-md"
+          />
+          <p className="text-lg italic mt-4 text-white">
+            "{testimonials[index].text}"
+          </p>
+          <h3 className="mt-4 text-xl font-semibold text-white">
+            {testimonials[index].name}
+          </h3>
+          <span className="text-sm text-white">{testimonials[index].role}</span>
+        </div>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                i === index ? "bg-gray-100 scale-125" : "bg-gray-500"
+              }`}
+            ></button>
           ))}
         </div>
-        <button className="absolute right-0 text-cyan-300 text-2xl px-2">&#x276F;</button>
       </div>
-      <div className="flex justify-center space-x-2 mt-6">
-        {[0, 1, 2, 3].map((_, index) => (
-          <span
-            key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === 1 ? "bg-cyan-400" : "bg-gray-600"
-            }`}
-          ></span>
-        ))}
-      </div>
+
+      <button
+        onClick={nextTestimonial}
+        className="absolute right-0 md:right-10 top-1/2 transform -translate-y-1/2 p-3 bg-gray-900 border border-gray-300 rounded-full transition"
+      >
+        <ChevronRight size={30} className="text-gray-300" />
+      </button>
     </div>
   );
 };
