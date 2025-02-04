@@ -6,31 +6,31 @@ const projects = [
     title: "Portfolio",
     image: "/images/projects/portfolio.png",
     liveLink: "https://ganzamacmonia.vercel.app",
-    githubLink: "https://github.com/yourusername/expense-tracker",
+    githubLink: "https://github.com/Mac-Monia/",
   },
   {
     title: "Investa",
     image: "/images/projects/investa.png",
     liveLink: "https://investa-klon.vercel.app",
-    githubLink: "https://github.com/yourusername/expense-tracker",
+    githubLink: "https://github.com/Mac-Monia/Investa",
   },
   {
     title: "OrebiShopping",
     image: "/images/projects/orebi.png",
     liveLink: "https://orebishopping-klon.vercel.app",
-    githubLink: "https://github.com/yourusername/expense-tracker",
+    githubLink: "https://github.com/Mac-Monia/OrebiShopping",
   },
   {
     title: "Apple",
     image: "/images/projects/apple.png",
     liveLink: "https://apple-klon.vercel.app",
-    githubLink: "https://github.com/yourusername/expense-tracker",
+    githubLink: "https://github.com/Mac-Monia/Apple",
   },
   {
     title: "CarHub",
     image: "/images/projects/carhub.png",
     liveLink: "https://car-hub-klon.vercel.app",
-    githubLink: "https://github.com/yourusername/expense-tracker",
+    githubLink: "https://github.com/Mac-Monia/CarHub",
   },
 ];
 
