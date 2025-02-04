@@ -2,7 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="scroll-mt-24 text-white flex flex-col md:flex-row gap-10 items-center justify-center py-10 md:py-20 px-4 md:px-20 lg:px-44">
+    <section
+      id="about"
+      className="scroll-mt-24 text-white flex flex-col md:flex-row gap-10 items-center justify-center py-10 md:py-20 px-4 md:px-20 lg:px-44"
+    >
       <div className="relative w-full md:w-1/2 flex justify-center">
         <img
           src="/images/about.png"
@@ -31,15 +34,12 @@ const About = () => {
           About
         </h2>
         <p className="text-gray-300 text-sm md:text-base pb-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          sollicitudin ut augue netus fusce fringilla. Aliquam blandit enim odio
-          cursus id. Pulvinar commodo pellentesque non massa, nunc massa nisi
-          est id. Diam est molestie massa commodo pulvinar aliquam arcu gravida.
-          Dictum pretium senectus dolor vulputate tempor ac vel. Placerat proin
-          sed risus at fusce aliquam. Convallis varius auctor quam fusce diam.
-          Vulputate enim est nibh diam pellentesque. Adipiscing dolor turpis
-          egestas velit sit feugiat ultricies. Id ac placerat dolor sem neque
-          elit. Ut nisl turpis nisi etiam ac nibh.
+          I am a dedicated developer with a strong foundation in HTML, CSS, and
+          JavaScript, complemented by growing expertise in Java and
+          cybersecurity. Passionate about creating innovative solutions. I have
+          experience working on projects ranging from responsive web design to
+          mobile app development, with a focus on user-centered design and
+          functionality.
         </p>
         <a href="/files/resume.pdf">
           <button className="bg-gradient-to-b from-gradient1 to-gradient2 text-white font-semibold px-4 py-2 rounded-lg">
